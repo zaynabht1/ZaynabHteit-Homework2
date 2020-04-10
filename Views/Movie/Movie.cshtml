@@ -1,0 +1,24 @@
+﻿@model ZaynabHteit_Homework2.ViewModels.RandomMovieViewModel
+<br />
+<h2>The Names of Movies</h2>
+<br />
+
+@if (Model.Movieslist.Count == 0)
+{
+    <text> No one has rented this movie before.</text>
+   // <p> No one has rented this movie before.</p>
+
+
+}
+else
+{
+    int id = 1;
+
+    <ul>
+        @foreach (var movie in Model.Movieslist)
+        {
+
+            <li>@Html.ActionLink(movie.Name, "GetMovie", "Movie", new { id = id++ }, null) </li>
+        }
+    </ul>
+}
